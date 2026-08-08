@@ -19,3 +19,6 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+
+# Raw source résumé kept locally; the served copy lives at assets/pdf/cv.pdf
+/resume_ng_zh__qyk_.pdf
