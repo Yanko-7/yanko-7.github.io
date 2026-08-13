@@ -125,7 +125,7 @@
   ],
   "projects": [
     {
-      "name": "FlowAR-BRep (under submission, SIGGRAPH Asia 2026)",
+      "name": "FlowAR-BRep (accepted at SIGGRAPH Asia 2026)",
       "summary": "Single-stage generative framework for CAD B-Rep jointly modeling discrete topology and continuous parametric geometry in one Transformer (Transfusion + Flow Matching); FSM-constrained decoding, sequence packing on 4x RTX 5090, multimodal conditioning, SOTA with ~2.8x inference speedup.",
       "highlights": [],
       "startDate": "2026-02",

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: FlowAR-BRep
-description: Single-stage autoregressive generation of CAD B-Rep with Flow Matching (under submission, SIGGRAPH Asia 2026)
+description: Single-stage autoregressive generation of CAD B-Rep with Flow Matching (accepted at SIGGRAPH Asia 2026)
 importance: 1
 category: research
 related_publications: true

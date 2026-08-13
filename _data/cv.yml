@@ -65,7 +65,7 @@ cv:
           - Developed a static analysis tool that auto-converts non-standard comments into Doxygen documentation format.
 
     Projects:
-      - name: FlowAR-BRep (under submission, SIGGRAPH Asia 2026)
+      - name: FlowAR-BRep (accepted at SIGGRAPH Asia 2026)
         summary: >
           Single-stage generative framework for CAD Boundary Representation (B-Rep) that jointly
           models discrete topology and continuous parametric geometry within one Transformer backbone.
