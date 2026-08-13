@@ -1,14 +1,14 @@
 cv:
   name: Yongkang Qi
-  label: M.S. student · CAD generation & geometric modeling
+  label: M.S. student · computer graphics, CAD model discretization
   email: yanko_77@outlook.com
   phone: (+86) 176-8830-0573
   location: Shanghai, China
   image: ""
   summary: >
-    Computer science master's student at East China Normal University working on generative
-    models for CAD, verifiable RL for image-to-CAD synthesis, and high-performance geometric
-    modeling, with hands-on experience in ML infrastructure and inference optimization.
+    Computer science master's student at East China Normal University working on the
+    discretization of complex CAD B-Rep geometry into watertight, high-fidelity meshes,
+    and on generative modeling of CAD B-Rep.
 
   social_networks:
     - network: GitHub
@@ -48,12 +48,12 @@ cv:
           - "Inference acceleration: deployed a distributed green-screen matting service for the effects pipeline with async invocation, achieving ~4x per-video speedup."
 
       - company: InfiScale
-        position: AI Infra Intern (sglang-jax)
-        location: Remote
+        position: sglang-jax Team Member
+        location: Shanghai, China
         start_date: 2025-06
         end_date: 2025-09
         highlights:
-          - Contributed to sglang-jax, working on LLM serving infrastructure.
+          - Member of the sglang-jax team, focusing on VLM (vision-language model) support.
 
       - company: ZWSOFT
         position: C++ R&D Intern (Geometric Modeling Kernel R&D Center)
@@ -104,15 +104,7 @@ cv:
 
       - name: Machine Learning
         icon: fa-solid fa-brain
-        keywords: "PyTorch, deep-learning training pipelines, inference optimization"
-
-      - name: Infrastructure
-        icon: fa-solid fa-server
-        keywords: "Collective communication primitives, Triton"
-
-      - name: Open Source
-        icon: fa-brands fa-github
-        keywords: "sglang-jax, Apache Doris, KDTree, xmake-repo (Contributor)"
+        keywords: "PyTorch, JAX, deep-learning training pipelines, inference optimization"
 
     Awards:
       - title: ACM-CCPC (China Collegiate Programming Contest) — Silver Medal

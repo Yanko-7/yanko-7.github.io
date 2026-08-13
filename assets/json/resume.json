@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Yongkang Qi",
-    "label": "M.S. student · CAD generation & geometric modeling",
+    "label": "M.S. student · computer graphics, CAD model discretization",
     "image": "",
     "email": "yanko_77@outlook.com",
     "phone": "(+86) 176-8830-0573",
-    "summary": "Computer science master's student at East China Normal University working on generative models for CAD, verifiable RL for image-to-CAD synthesis, and high-performance geometric modeling, with hands-on experience in ML infrastructure and inference optimization.",
+    "summary": "Computer science master's student at East China Normal University working on the discretization of complex CAD B-Rep geometry into watertight, high-fidelity meshes, and on generative modeling of CAD B-Rep.",
     "location": {
       "city": "Shanghai",
       "countryCode": "CN",
@@ -35,12 +35,12 @@
     },
     {
       "name": "InfiScale",
-      "position": "AI Infra Intern (sglang-jax)",
-      "location": "Remote",
+      "position": "sglang-jax Team Member",
+      "location": "Shanghai, China",
       "startDate": "2025-06",
       "endDate": "2025-09",
       "summary": "",
-      "highlights": ["Contributed to sglang-jax LLM serving infrastructure."]
+      "highlights": ["Member of the sglang-jax team, focusing on VLM (vision-language model) support."]
     },
     {
       "name": "ZWSOFT",
@@ -112,15 +112,7 @@
     },
     {
       "name": "Machine Learning",
-      "keywords": ["PyTorch", "Deep-learning training pipelines", "Inference optimization"]
-    },
-    {
-      "name": "Infrastructure",
-      "keywords": ["Collective communication primitives", "Triton"]
-    },
-    {
-      "name": "Open Source",
-      "keywords": ["sglang-jax", "Apache Doris", "KDTree", "xmake-repo"]
+      "keywords": ["PyTorch", "JAX", "Deep-learning training pipelines", "Inference optimization"]
     }
   ],
   "projects": [
