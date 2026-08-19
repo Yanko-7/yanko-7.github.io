@@ -21,6 +21,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Yongkang Qi (漆永康), a computer science master's student at [East China Normal University](https://www.ecnu.edu.cn/), working in **computer graphics** — specifically the **discretization of CAD models**. My earlier degree in Software Engineering is from South China Agricultural University, and I have a competitive-programming background (ACM-ICPC / CCPC medalist).
+I am Yongkang Qi (漆永康), a computer science master's student at [East China Normal University](https://www.ecnu.edu.cn/), working in **computer graphics** — specifically the **discretization of CAD models**. My earlier degree in Software Engineering is from South China Agricultural University, and during my undergraduate studies, I was passionate about competitive programming.
 
 My research focuses on turning complex CAD **Boundary Representation (B-Rep)** geometry into watertight, high-fidelity meshes: curvature-aware adaptive sampling under a geometric-error bound, robust surface–mesh intersection, and topology repair for periodic surfaces, singularities, and trim loops.

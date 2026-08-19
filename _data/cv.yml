@@ -50,8 +50,7 @@ cv:
       - company: InfiScale
         position: sglang-jax
         location: Shanghai, China
-        start_date: 2025-06
-        end_date: 2025-09
+        start_date: 2026
         highlights:
           - Member of the sglang-jax team, focusing on VLM (vision-language model) support.
 

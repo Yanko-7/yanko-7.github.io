@@ -49,12 +49,12 @@ Examples of triangle-mesh output, mesh inspection, and rendered complex CAD mode
   </figure>
   <figure style="flex: 1 1 300px; margin: 0">
     <img
-      src="{{ '/assets/img/nanotess/mesh-inspection.png' | relative_url }}"
-      alt="CAD surface mesh inspection interface"
+      src="{{ '/assets/img/nanotess/minimal-surface-meshing.png' | relative_url }}"
+      alt="Meshing of a minimal surface"
       style="width: 100%; height: 280px; object-fit: contain"
       loading="lazy"
     >
-    <figcaption style="text-align: center">Surface-mesh inspection</figcaption>
+    <figcaption style="text-align: center">Minimal surface meshing</figcaption>
   </figure>
   <figure style="flex: 1 1 300px; margin: 0">
     <img

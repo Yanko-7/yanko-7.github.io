@@ -2,13 +2,19 @@
 layout: page
 title: FlowAR-BRep
 description: Single-stage autoregressive generation of CAD B-Rep with Flow Matching (accepted at SIGGRAPH Asia 2026)
-img: assets/img/flowar-brep.png
+img: assets/img/publication_preview/flowar-brep.png
 importance: 1
 category: research
 related_publications: true
 ---
 
-![FlowAR-BRep framework and generated CAD models]({{ '/assets/img/flowar-brep.png' | relative_url }})
+<p style="text-align: center">
+  <img
+    src="{{ '/assets/img/publication_preview/flowar-brep.png' | relative_url }}"
+    alt="FlowAR-BRep framework and generated CAD models"
+    style="width: 100%; max-width: 720px; height: auto"
+  >
+</p>
 
 **FlowAR-BRep** is a single-stage generative framework for CAD **Boundary Representation (B-Rep)** that jointly models discrete topology and continuous parametric geometry inside a single Transformer backbone {% cite qi2026flowarbrep %}.
 
