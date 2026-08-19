@@ -106,19 +106,17 @@ cv:
         keywords: "PyTorch, JAX, deep-learning training pipelines, inference optimization"
 
     Awards:
-      - title: ACM-CCPC (China Collegiate Programming Contest) — Silver Medal
+      - title: '<img src="../assets/img/ccpc-logo.png" alt="" aria-hidden="true" style="width: 26px; height: 26px; object-fit: contain; margin-right: 0.5rem; vertical-align: middle">ACM-CCPC (China Collegiate Programming Contest) — Silver Medal'
         date: 2021-11
         awarder: CCPC
-        summary: '<img src="../assets/img/ccpc-logo.png" alt="CCPC logo" style="width: 96px; height: 72px; object-fit: contain">'
 
       - title: Guangdong Collegiate Programming Contest ("Pony.ai Cup") — Silver Medal
         date: 2022-05
         awarder: Guangdong Province
 
-      - title: ACM-ICPC (International Collegiate Programming Contest) — Bronze Medal
+      - title: '<img src="https://news.icpc.global/icpc_foundation.svg" alt="" aria-hidden="true" style="width: 32px; height: 26px; object-fit: contain; margin-right: 0.5rem; vertical-align: middle">ACM-ICPC (International Collegiate Programming Contest) — Bronze Medal'
         date: 2022-12
         awarder: ICPC
-        summary: '<img src="../assets/img/icpc-logo.png" alt="ICPC logo" style="width: 128px; height: 72px; object-fit: contain">'
 
       - title: 18th Baidu Star Programming Contest — National Top 400
         date: 2022-09
