@@ -3,7 +3,8 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: Open-source projects I build and contribute to.
-nav: true
+nav: false
+published: false
 nav_order: 4
 ---
 

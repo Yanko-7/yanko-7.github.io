@@ -8,7 +8,6 @@ repo_description_lines_max: 2
 # so a wrong slug renders a broken card. Add or remove freely.
 github_repos:
   - sgl-project/sglang-jax
-  - sgl-project/sglang
   - apache/doris
   - xmake-io/xmake-repo
   # Add more of your own repos or contributions below, for example:

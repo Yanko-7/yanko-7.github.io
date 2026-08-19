@@ -35,7 +35,7 @@
     },
     {
       "name": "InfiScale",
-      "position": "sglang-jax Team Member",
+      "position": "sglang-jax",
       "location": "Shanghai, China",
       "startDate": "2025-06",
       "endDate": "2025-09",
@@ -84,7 +84,7 @@
       "title": "ACM-CCPC (China Collegiate Programming Contest) — Silver Medal",
       "date": "2021-11",
       "awarder": "CCPC",
-      "summary": ""
+      "summary": "<img src=\"../assets/img/ccpc-logo.png\" alt=\"CCPC logo\" style=\"width: 96px; height: 72px; object-fit: contain\">"
     },
     {
       "title": "Guangdong Collegiate Programming Contest (\"Pony.ai Cup\") — Silver Medal",
@@ -96,7 +96,7 @@
       "title": "ACM-ICPC (International Collegiate Programming Contest) — Bronze Medal",
       "date": "2022-12",
       "awarder": "ICPC",
-      "summary": ""
+      "summary": "<img src=\"../assets/img/icpc-logo.png\" alt=\"ICPC logo\" style=\"width: 128px; height: 72px; object-fit: contain\">"
     },
     {
       "title": "18th Baidu Star Programming Contest — National Top 400",
