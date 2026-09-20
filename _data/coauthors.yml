@@ -1,7 +1,0 @@
-# Map author surnames to canonical first names and profile links so jekyll-scholar
-# can render co-author links in the bibliography. Add entries as your papers grow.
-#
-# Example:
-# "qi":
-#   - firstname: ["Yongkang", "Y."]
-#     url: https://github.com/Yanko-7

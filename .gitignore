@@ -1,24 +1,36 @@
-_site
-.bundle
-.DS_store
-.idea
-.jekyll-cache
-.jekyll-metadata
-.ruby-version
-.sass-cache
-.tweet-cache
-.venv
-assets/libs/
-assets/rendercv/rendercv_output/*.typ
-al-folio-upgrade-report.md
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
 node_modules/
-output/playwright/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# pagefind
+public/pagefind
+
+# pnpm
+.pnpm-store
+
+# docker compose
+compose.override.yaml
+
+playwright-report/
 test-results/
-vendor
-
-# Python bytecode from bin/ helper scripts
-__pycache__/
-*.pyc
-
-# Raw source résumé kept locally; the served copy lives at assets/pdf/cv.pdf
-/resume_ng_zh__qyk_.pdf

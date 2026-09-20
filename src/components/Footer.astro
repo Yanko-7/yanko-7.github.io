@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import Socials from "./Socials.astro";
+
+type Props = {
+  noMarginTop?: boolean;
+} & HTMLAttributes<"footer">;
+
+const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
+  {...attrs}
+>
+  <div
+    class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"
+  >
+    <Socials />
+    <div
+      class="text-muted-foreground my-2 flex flex-col items-center text-xs whitespace-nowrap sm:flex-row"
+    >
+      <span>&#169; {currentYear} Yongkang Qi</span>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <span
+        >Built with <a
+          href="https://github.com/satnaing/astro-paper"
+          class="underline decoration-dotted">AstroPaper</a
+        ></span
+      >
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,116 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import Geometry from "@/components/Geometry.astro";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+
+const posts = getSortedPosts(await getCollection("posts"));
+const selected = posts.filter(({ data }) => data.featured);
+const recent = posts.filter(({ data }) => !data.featured).slice(0, 3);
+---
+
+<Layout title="Yongkang Qi · Geometry & systems">
+  <Header />
+  <main id="main-content" class="app-layout">
+    <section class="home-hero" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="status-dot"></span> RESEARCH / ENGINEERING / NOTES
+        </p>
+        <h1 id="intro-title">
+          Yongkang Qi<span class="name-zh" lang="zh-CN">漆永康 · Yanko</span>
+        </h1>
+        <p class="hero-statement">
+          Thinking in geometry.<br />Building in code.
+        </p>
+        <p class="hero-description">
+          I work on geometric modeling, generative CAD, and efficient inference.
+          Currently a master's student at East China Normal University and part
+          of the sglang-jax team at InfiScale.
+        </p>
+        <div class="hero-links">
+          <a class="primary-link" href="/about/"
+            >More about me <span aria-hidden="true">↗</span></a
+          >
+          <a href="https://github.com/Yanko-7"
+            >GitHub <span aria-hidden="true">↗</span></a
+          >
+          <a href="mailto:yanko_77@outlook.com"
+            >Email <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+      <Geometry />
+    </section>
+
+    <section class="focus-section" aria-labelledby="focus-title">
+      <div class="section-heading">
+        <h2 id="focus-title">Areas of focus</h2><span class="section-aside"
+          >FROM REPRESENTATION TO EXECUTION</span
+        >
+      </div>
+      <div class="focus-grid">
+        <a href="/about/#geometry"
+          ><span class="focus-number">01 / GEOMETRY</span><h3>
+            Making shapes computable <span aria-hidden="true">↗</span>
+          </h3><p>
+            B-Rep, watertight meshes, and the details that make geometry robust.
+          </p></a
+        >
+        <a href="/about/#generative-cad"
+          ><span class="focus-number">02 / GENERATION</span><h3>
+            Learning to build in 3D <span aria-hidden="true">↗</span>
+          </h3><p>
+            Generative CAD with joint topology and geometry; verifiable model
+            training.
+          </p></a
+        >
+        <a href="/about/#systems"
+          ><span class="focus-number">03 / SYSTEMS</span><h3>
+            Closing the performance gap <span aria-hidden="true">↗</span>
+          </h3><p>
+            Vision-language models, JAX, and practical inference optimization.
+          </p></a
+        >
+      </div>
+    </section>
+
+    <section class="writing-section" aria-labelledby="writing-title">
+      <div class="section-heading">
+        <h2 id="writing-title">Selected notes</h2><a href="/posts/"
+          >All writing <span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <p class="section-description">
+        Things learned by working through them. Mostly in Chinese.
+      </p>
+      <ul>{selected.map(data => <Card variant="h3" {...data} />)}</ul>
+    </section>
+    <section
+      class="writing-section recent-section"
+      aria-labelledby="recent-title"
+    >
+      <div class="section-heading">
+        <h2 id="recent-title">From the notebook</h2><a href="/archives/"
+          >Archive <span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <ul>{recent.map(data => <Card variant="h3" {...data} />)}</ul>
+    </section>
+    <div class="closing-note">
+      <span>Always a work in progress.</span><a href="/rss.xml"
+        >Follow via RSS ↗</a
+      >
+    </div>
+  </main>
+  <Footer />
+</Layout>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    if (window.location.pathname === "/")
+      sessionStorage.setItem("backUrl", "/");
+  });
+</script>

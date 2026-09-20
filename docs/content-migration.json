@@ -1,0 +1,170 @@
+{
+  "source": "Yanko-7/MyBlog",
+  "commit": "94ca4813e4b0881c3739e5e1d3ce7df1a69afc88",
+  "cutoff": "2022-01-01",
+  "imported": [
+    {
+      "source": "(题解)SCAU春季ACM专题训练2_动态规划.md",
+      "slug": "dynamic-programming-training",
+      "originalTitle": "【题解】SCAU春季ACM专题训练2_动态规划",
+      "date": "2023-02-28 02:14:07+08:00",
+      "draft": false
+    },
+    {
+      "source": "ICPC网络赛2补题报告.md",
+      "slug": "icpc-2022-online-round-2",
+      "originalTitle": "ICPC网络赛2补题报告",
+      "date": "2022-09-29 19:48:36",
+      "draft": false
+    },
+    {
+      "source": "Mac零基础基于服务器上搭建博客网站.md",
+      "slug": "hugo-on-a-server",
+      "originalTitle": "Mac零基础基于服务器上搭建博客网站",
+      "date": "2023-02-14 02:14:07+08:00",
+      "draft": true
+    },
+    {
+      "source": "Modern C++ 学习记录.md",
+      "slug": "modern-cpp-notes",
+      "originalTitle": "Modern C++ 学习笔记",
+      "date": "2023-02-23 15:53:52+08:00",
+      "draft": false
+    },
+    {
+      "source": "train tips.md",
+      "slug": "neural-network-training-notes",
+      "originalTitle": "一些train tips",
+      "date": "2024-01-26",
+      "draft": false
+    },
+    {
+      "source": "华东师范大学考研机试题解题笔记.md",
+      "slug": "ecnu-programming-notes",
+      "originalTitle": "华东师范大学考研往年机试题解题笔记",
+      "date": "2024-01-07 15:53:52+08:00",
+      "draft": false
+    },
+    {
+      "source": "基础.md",
+      "slug": "rust-fundamentals",
+      "originalTitle": "Rust语法基础",
+      "date": "2024-01-15",
+      "draft": false
+    },
+    {
+      "source": "比赛自用模板.md",
+      "slug": "competitive-programming-toolkit",
+      "originalTitle": "比赛自用模板",
+      "date": "2022-04-08 18:05:36",
+      "draft": false
+    },
+    {
+      "source": "解题报告1.md",
+      "slug": "network-flow-notes",
+      "originalTitle": "解题报告1",
+      "date": "2022-09-08 18:05:36",
+      "draft": false
+    },
+    {
+      "source": "解题报告2.md",
+      "slug": "counting-and-differences",
+      "originalTitle": "解题报告2",
+      "date": "2022-09-09 18:05:36",
+      "draft": false
+    },
+    {
+      "source": "解题报告3.md",
+      "slug": "trees-and-dynamic-programming",
+      "originalTitle": "解题报告3",
+      "date": "2022-09-11 20:05:36",
+      "draft": false
+    },
+    {
+      "source": "解题报告4.md",
+      "slug": "greedy-and-string-dp",
+      "originalTitle": "解题报告4",
+      "date": "2022-09-14 11:05:36",
+      "draft": false
+    },
+    {
+      "source": "计算机网络笔记.md",
+      "slug": "computer-networking-notes",
+      "originalTitle": "计算机网络笔记",
+      "date": "2023-03-04 13:51:17+08:00",
+      "draft": false
+    }
+  ],
+  "excluded": [
+    {
+      "source": "2-SAT模板题.md",
+      "date": "2021-07-07 01:05:36",
+      "reason": "before 2022"
+    },
+    {
+      "source": "SCAU-1109综合实验：文件操作与字符处理题解.md",
+      "date": "2021-02-22 22:11:06",
+      "reason": "before 2022"
+    },
+    {
+      "source": "SCAU2020新生赛初出茅庐题解.md",
+      "date": "2021-02-20 00:16:59",
+      "reason": "before 2022"
+    },
+    {
+      "source": "SCAU2021春季个人排位赛第十二场 D题解（贪心还原树）.md",
+      "date": "2021-05-27 23:55:14",
+      "reason": "before 2022"
+    },
+    {
+      "source": "SCAU训练赛F题-贪心-二叉堆维护最小值.md",
+      "date": "2021-03-23 21:22:28",
+      "reason": "before 2022"
+    },
+    {
+      "source": "SCAU训练赛第六场折半-二分.md",
+      "date": "2021-04-25 00:27:08",
+      "reason": "before 2022"
+    },
+    {
+      "source": "SCAU训练赛第六场（计算几何-暴力枚举）.md",
+      "date": "2021-04-25 16:30:26",
+      "reason": "before 2022"
+    },
+    {
+      "source": "bfs加记忆化.md",
+      "date": "2021-03-05 12:33:13",
+      "reason": "before 2022"
+    },
+    {
+      "source": "hdu1728-题解-dfs-剪枝.md",
+      "date": "2021-04-16 13:44:20",
+      "reason": "before 2022"
+    },
+    {
+      "source": "poj1011木棒（剪枝经典例题）.md",
+      "date": "2021-04-17 18:36:42",
+      "reason": "before 2022"
+    },
+    {
+      "source": "乘法逆元.md",
+      "date": "2021-05-10 22:55:50",
+      "reason": "before 2022"
+    },
+    {
+      "source": "图的遍历（tarjan缩点-树形DP）.md",
+      "date": "2021-06-04 15:48:34",
+      "reason": "before 2022"
+    },
+    {
+      "source": "欧拉回路.md",
+      "date": "2021-06-03 10:05:35",
+      "reason": "before 2022"
+    },
+    {
+      "source": "欧拉定理.md",
+      "date": "2021-04-23 09:12:35",
+      "reason": "before 2022"
+    }
+  ]
+}

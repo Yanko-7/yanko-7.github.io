@@ -1,0 +1,2 @@
+# The notebook is primarily Chinese; enable CJK word segmentation.
+force_language: zh

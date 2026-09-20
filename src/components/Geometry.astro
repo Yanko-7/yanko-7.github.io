@@ -1,0 +1,41 @@
+---
+// A parametric torus projected into an axonometric view: geometry, drawn in code.
+const project = (u: number, v: number) => {
+  const x = (1.8 + 0.68 * Math.cos(v)) * Math.cos(u);
+  const y = (1.8 + 0.68 * Math.cos(v)) * Math.sin(u);
+  const z = 0.68 * Math.sin(v);
+  return `${(150 + 50 * (x * 0.88 - y * 0.48)).toFixed(2)},${(140 + 50 * (x * 0.24 + y * 0.44 - z * 0.88)).toFixed(2)}`;
+};
+const curves = Array.from({ length: 24 }, (_, i) =>
+  Array.from({ length: 73 }, (_, j) =>
+    project((i * Math.PI) / 12, (j * Math.PI) / 36)
+  ).join(" ")
+);
+const rings = Array.from({ length: 12 }, (_, i) =>
+  Array.from({ length: 97 }, (_, j) =>
+    project((j * Math.PI) / 48, (i * Math.PI) / 6)
+  ).join(" ")
+);
+---
+
+<figure
+  class="geometry-figure"
+  aria-label="A wireframe torus, drawn as a parametric surface"
+>
+  <svg viewBox="0 0 300 290" fill="none" aria-hidden="true">
+    <path
+      d="M20 20h15M20 20v15M280 20h-15M280 20v15M20 270h15M20 270v-15M280 270h-15M280 270v-15"
+      class="geometry-guides"></path>
+    <path
+      d="M150 35v220M35 140h230"
+      class="geometry-guides"
+      stroke-dasharray="2 5"></path>
+    <g stroke="currentColor" stroke-width=".65" opacity=".75"
+      >{curves.map(points => <polyline {points} />)}{
+        rings.map(points => <polyline {points} />)
+      }</g
+    >
+    <circle cx="150" cy="140" r="2" fill="currentColor"></circle>
+  </svg>
+  <figcaption>FIG. 01 — A CONTINUOUS WORK IN PROGRESS</figcaption>
+</figure>
