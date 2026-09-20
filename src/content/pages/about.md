@@ -15,7 +15,7 @@ I like problems where mathematical structure meets implementation: a mesh that m
 
 I work on discretizing complex CAD boundary representations (B-Rep) into watertight triangle meshes. This includes curvature-aware sampling of NURBS surfaces, robust intersections in parameter space, and topology repair around periodic surfaces, singularities, and trim loops.
 
-The implementation combines Newton–Raphson and bisection methods for intersection solving, with an arena allocator and a configurable mesh backend. In our partners' test sets, the framework runs approximately **2.3× faster than ACIS**. GME is a collaboration involving Tsinghua, XJTU, HDU, and ECNU, with deployments at Hudong-Zhonghua Shipbuilding and Yunji.
+In our partners' test sets, the framework runs approximately **2.3× faster than ACIS**. GME is a collaboration involving Tsinghua, XJTU, HDU, and ECNU, with deployments at Hudong-Zhonghua Shipbuilding and Yunji.
 
 ## Generative CAD
 
