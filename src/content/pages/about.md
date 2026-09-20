@@ -58,6 +58,6 @@ Bachelor of Engineering in Software Engineering.
 
 I primarily work with **C++, Python, PyTorch, and JAX**, and also explore Rust, Haskell, and TypeScript.
 
-Before focusing on graphics and machine learning, I spent much of my undergraduate time on competitive programming: **CCPC silver (2021)**, **Guangdong Collegiate Programming Contest silver (2022)**, **ICPC bronze (2022)**, and **Baidu Star national top 400 (2022)**.
+Before focusing on graphics and machine learning, I spent much of my undergraduate time on competitive programming: **China Collegiate Programming Contest — Silver Medal (2021)**, **Guangdong Collegiate Programming Contest — Silver Medal (2022)**, **International Collegiate Programming Contest — Bronze Medal (2022)**, and **Baidu Star national top 400 (2022)**.
 
 This site is my working notebook: algorithms, languages, systems, and things I want to understand more deeply. The older Chinese notes capture how I thought through problems at the time.
