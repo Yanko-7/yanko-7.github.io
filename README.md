@@ -43,7 +43,7 @@ draft: false
 ---
 ```
 
-Markdown supports fenced code and KaTeX math. File names become article URLs; use stable descriptive slugs. The UI and profile are in English; original Chinese article bodies retain their language. System fonts keep the site independent of remote font services.
+Markdown supports fenced code and KaTeX math. File names become article URLs; use stable descriptive slugs. The UI and profile are in English; original Chinese article bodies retain their language. Google Sans Code is hosted locally (with its OFL license), matching the AstroPaper demo without remote font requests.
 
 ## Validation
 

@@ -5,6 +5,7 @@ test("home, theme persistence, profile, and local assets", async ({ page }) => {
   page.on("pageerror", error => errors.push(error.message));
   await page.goto("/");
   await expect(page.locator("h1")).toContainText("Yongkang Qi");
+  await page.evaluate(() => document.fonts.ready);
   await page.screenshot({
     path: "test-results/home-desktop.png",
     fullPage: true,
@@ -48,9 +49,9 @@ test("mobile menu, article math and no horizontal overflow", async ({
   );
   await page
     .locator("#menu-items")
-    .getByRole("link", { name: "Writing" })
+    .getByRole("link", { name: "Posts" })
     .click();
-  await expect(page.locator("h1")).toHaveText("Writing");
+  await expect(page.locator("h1")).toHaveText("Posts");
   for (const path of [
     "/",
     "/about/",

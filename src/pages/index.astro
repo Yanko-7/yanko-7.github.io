@@ -1,116 +1,135 @@
 ---
 import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import IconRss from "@/assets/icons/IconRss.svg";
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Socials from "@/components/Socials.astro";
 import Card from "@/components/Card.astro";
-import Geometry from "@/components/Geometry.astro";
+import LinkButton from "@/components/LinkButton.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
 
-const posts = getSortedPosts(await getCollection("posts"));
-const selected = posts.filter(({ data }) => data.featured);
-const recent = posts.filter(({ data }) => !data.featured).slice(0, 3);
+const { socials, posts: postsConfig } = config;
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const t = useTranslations(locale);
+
+const posts = await getCollection("posts");
+const sortedPosts = getSortedPosts(posts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const homePath = getRelativeLocaleUrl(locale, "");
 ---
 
-<Layout title="Yongkang Qi · Geometry & systems">
+<Layout>
   <Header />
-  <main id="main-content" class="app-layout">
-    <section class="home-hero" aria-labelledby="intro-title">
-      <div class="hero-copy">
-        <p class="eyebrow">
-          <span class="status-dot"></span> RESEARCH / ENGINEERING / NOTES
-        </p>
-        <h1 id="intro-title">
-          Yongkang Qi<span class="name-zh" lang="zh-CN">漆永康 · Yanko</span>
-        </h1>
-        <p class="hero-statement">
-          Thinking in geometry.<br />Building in code.
-        </p>
-        <p class="hero-description">
-          I work on geometric modeling, generative CAD, and efficient inference.
-          Currently a master's student at East China Normal University and part
-          of the sglang-jax team at InfiScale.
-        </p>
-        <div class="hero-links">
-          <a class="primary-link" href="/about/"
-            >More about me <span aria-hidden="true">↗</span></a
-          >
-          <a href="https://github.com/Yanko-7"
-            >GitHub <span aria-hidden="true">↗</span></a
-          >
-          <a href="mailto:yanko_77@outlook.com"
-            >Email <span aria-hidden="true">↗</span></a
-          >
-        </div>
-      </div>
-      <Geometry />
-    </section>
-
-    <section class="focus-section" aria-labelledby="focus-title">
-      <div class="section-heading">
-        <h2 id="focus-title">Areas of focus</h2><span class="section-aside"
-          >FROM REPRESENTATION TO EXECUTION</span
-        >
-      </div>
-      <div class="focus-grid">
-        <a href="/about/#geometry"
-          ><span class="focus-number">01 / GEOMETRY</span><h3>
-            Making shapes computable <span aria-hidden="true">↗</span>
-          </h3><p>
-            B-Rep, watertight meshes, and the details that make geometry robust.
-          </p></a
-        >
-        <a href="/about/#generative-cad"
-          ><span class="focus-number">02 / GENERATION</span><h3>
-            Learning to build in 3D <span aria-hidden="true">↗</span>
-          </h3><p>
-            Generative CAD with joint topology and geometry; verifiable model
-            training.
-          </p></a
-        >
-        <a href="/about/#systems"
-          ><span class="focus-number">03 / SYSTEMS</span><h3>
-            Closing the performance gap <span aria-hidden="true">↗</span>
-          </h3><p>
-            Vision-language models, JAX, and practical inference optimization.
-          </p></a
-        >
-      </div>
-    </section>
-
-    <section class="writing-section" aria-labelledby="writing-title">
-      <div class="section-heading">
-        <h2 id="writing-title">Selected notes</h2><a href="/posts/"
-          >All writing <span aria-hidden="true">↗</span></a
-        >
-      </div>
-      <p class="section-description">
-        Things learned by working through them. Mostly in Chinese.
-      </p>
-      <ul>{selected.map(data => <Card variant="h3" {...data} />)}</ul>
-    </section>
-    <section
-      class="writing-section recent-section"
-      aria-labelledby="recent-title"
-    >
-      <div class="section-heading">
-        <h2 id="recent-title">From the notebook</h2><a href="/archives/"
-          >Archive <span aria-hidden="true">↗</span></a
-        >
-      </div>
-      <ul>{recent.map(data => <Card variant="h3" {...data} />)}</ul>
-    </section>
-    <div class="closing-note">
-      <span>Always a work in progress.</span><a href="/rss.xml"
-        >Follow via RSS ↗</a
+  <main
+    id="main-content"
+    data-layout="index"
+    data-home-path={homePath}
+    class="app-layout my-1"
+  >
+    <section id="hero" class="border-border border-b pt-8 pb-6">
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+        Yongkang Qi
+      </h1>
+      <a
+        target="_blank"
+        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
+        class="inline-block"
+        aria-label="RSS Feed"
+        title="RSS Feed"
       >
+        <IconRss
+          width={20}
+          height={20}
+          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
+        />
+        <span class="sr-only">RSS Feed</span>
+      </a>
+
+      <p>
+        I'm Yongkang Qi (漆永康), a master's student at East China Normal
+        University. I work on geometric modeling and generative CAD, and
+        contribute to vision-language model support in sglang-jax at InfiScale.
+      </p>
+      <p class="mt-2">
+        This is my notebook on algorithms, programming languages, and systems. I
+        like understanding how things work, then making them work better.
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href="/about/">More about me</LinkButton
+        >.
+      </p>
+      {
+        socials.length > 0 && (
+          <div class="mt-4 flex max-sm:flex-col sm:items-center">
+            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
+              {t.home.socialLinks}:
+            </div>
+            <Socials />
+          </div>
+        )
+      }
+    </section>
+
+    {
+      featuredPosts.length > 0 && (
+        <section
+          id="featured"
+          class:list={[
+            "pt-12 pb-6",
+            { "border-border border-b": recentPosts.length > 0 },
+          ]}
+        >
+          <h2 class="text-2xl font-semibold tracking-wide">
+            {t.home.featured}
+          </h2>
+          <ul>
+            {featuredPosts.map(data => (
+              <Card variant="h3" {...data} />
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      recentPosts.length > 0 && (
+        <section id="recent-posts" class="pt-12 pb-6">
+          <h2 class="text-2xl font-semibold tracking-wide">
+            {t.home.recentPosts}
+          </h2>
+          <ul>
+            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
+              <Card variant="h3" {...data} />
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <div class="my-8 text-center">
+      <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
+        {t.home.allPosts}
+        <IconArrowRight class="inline-block rtl:-rotate-180" />
+      </LinkButton>
     </div>
   </main>
   <Footer />
 </Layout>
+
 <script>
   document.addEventListener("astro:page-load", () => {
-    if (window.location.pathname === "/")
-      sessionStorage.setItem("backUrl", "/");
+    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
+      ?.dataset;
+    const baseRoot = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+    if (indexLayout?.layout) {
+      sessionStorage.setItem("backUrl", indexLayout.homePath ?? baseRoot);
+    }
   });
 </script>

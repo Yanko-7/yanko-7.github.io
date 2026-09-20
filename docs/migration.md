@@ -1,6 +1,6 @@
 # Migration from al-folio
 
-The owner requested a complete replacement of al-folio with AstroPaper. The migration uses AstroPaper 6.1.0, upstream commit `35cfa7fbe0b897306d27670d3819e55d5205f3dd`, with a custom personal home page, profile, colors, typography, and parametric geometry illustration. The original repository history is unchanged; the working tree before migration was also copied to `/tmp/yanko-al-folio-backup` during this session (temporary, not a permanent backup).
+The owner requested a complete replacement of al-folio with AstroPaper. The migration uses AstroPaper 6.1.0, upstream commit `35cfa7fbe0b897306d27670d3819e55d5205f3dd`, with the official demo’s single-column home page, colors, Google Sans Code typography, and article cards. Personalization is limited to identity, profile, and content. The original repository history is unchanged; the working tree before migration was also copied to `/tmp/yanko-al-folio-backup` during this session (temporary, not a permanent backup).
 
 ## Personal information
 
@@ -27,6 +27,6 @@ All 28 referenced images have been saved to `public/images/posts/`. Three OI Wik
 
 Removed Jekyll configuration, gems, Docker setup, example assets, old documentation, and al-folio CI/tests. Kept Git history and protected agent-tooling directories. Root `AGENTS.md` now describes the Astro site; legacy al-folio skills do not apply.
 
-The site uses system fonts, a local static social preview image, and a generated local search index. No external font requests are required for rendering or building. Automatic per-post OG generation is disabled. Upstream's MIT license is retained.
+The site uses locally hosted Google Sans Code fonts, a local static social preview image, and a generated local search index. No external font requests are required for rendering or building. Automatic per-post OG generation is disabled. Upstream's MIT license is retained.
 
 The GitHub Pages workflow serves at `/`. It runs format, lint, build, migration/link tests, and browser checks before deploying. Repository Settings → Pages must use **GitHub Actions** as the publishing source. The migration itself does not push or publish changes.
