@@ -7,7 +7,7 @@ I'm **Yongkang Qi (漆永康)**, also known as **Yanko**. I'm a master's student
 
 I like problems where mathematical structure meets implementation: a mesh that must be watertight, a generated CAD model that must be valid, or a model that needs to run efficiently. My earlier background in competitive programming still shapes how I approach them—understand the constraints, make the structure explicit, then build.
 
-[GitHub](https://github.com/Yanko-7) · [Email](mailto:yanko_77@outlook.com) · [Download CV](/assets/pdf/cv.pdf)
+[GitHub](https://github.com/Yanko-7) · [Email](mailto:yanko_77@outlook.com)
 
 ## Geometry
 
@@ -58,6 +58,11 @@ Bachelor of Engineering in Software Engineering.
 
 I primarily work with **C++, Python, PyTorch, and JAX**, and also explore Rust, Haskell, and TypeScript.
 
-Before focusing on graphics and machine learning, I spent much of my undergraduate time on competitive programming: **China Collegiate Programming Contest — Silver Medal (2021)**, **Guangdong Collegiate Programming Contest — Silver Medal (2022)**, **International Collegiate Programming Contest — Bronze Medal (2022)**, and **Baidu Star national top 400 (2022)**.
+Before focusing on graphics and machine learning, I spent much of my undergraduate time on competitive programming:
+
+- **China Collegiate Programming Contest — Silver Medal (2021)**
+- **Guangdong Collegiate Programming Contest — Silver Medal (2022)**
+- **International Collegiate Programming Contest — Bronze Medal (2022)**
+- **Baidu Star national top 400 (2022)**
 
 This site is my working notebook: algorithms, languages, systems, and things I want to understand more deeply. The older Chinese notes capture how I thought through problems at the time.

@@ -24,10 +24,7 @@ test("home, theme persistence, profile, and local assets", async ({ page }) => {
   await page.screenshot({ path: "test-results/home-dark.png", fullPage: true });
   await page.getByRole("link", { name: "More about me" }).click();
   await expect(page.locator("h1")).toContainText("About me");
-  await expect(page.getByRole("link", { name: "Download CV" })).toHaveAttribute(
-    "href",
-    "/assets/pdf/cv.pdf"
-  );
+  await expect(page.getByRole("link", { name: "Download CV" })).toHaveCount(0);
   expect((await page.request.get("/assets/pdf/cv.pdf")).status()).toBe(200);
   expect((await page.request.get("/og.png")).status()).toBe(200);
   expect(errors).toEqual([]);
