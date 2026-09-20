@@ -43,7 +43,7 @@ draft: false
 ---
 ```
 
-Markdown supports fenced code and KaTeX math. File names become article URLs; use stable descriptive slugs. The UI and profile are in English; original Chinese article bodies retain their language. Google Sans Code is hosted locally (with its OFL license), matching the AstroPaper demo without remote font requests.
+Markdown supports fenced code and KaTeX math. File names become article URLs; use stable descriptive slugs. The UI and profile are in English; original Chinese article bodies retain their language. Google Sans Code is hosted locally (with its OFL license), matching the AstroPaper demo without remote font requests. Chinese article prose uses locally bundled Noto Sans SC at weight 400, split by Unicode range; headings and math retain their existing fonts. Code blocks and inline code use locally bundled JetBrains Mono (variable weight, normal style), with ligatures disabled. The font stylesheets are loaded on article pages. Its OFL license is included in `public/fonts/jetbrains-mono-OFL.txt`. Run the browser checks to record cold-load font sizes in `test-results/font-transfer.json`.
 
 ## Validation
 
