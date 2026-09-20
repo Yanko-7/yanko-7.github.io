@@ -10,7 +10,7 @@ draft: false
 lang: zh-CN
 ---
 
-###  **G Good Permutation**
+## **G Good Permutation**
 
 > 定义一个好区间为区间的最大值-最小值等于区间长度-1.
 >
@@ -143,7 +143,7 @@ int main() {
 }
 ```
 
-### **L Quadruple**
+## **L Quadruple**
 
 > 给定一个字符串，给q个区间，以该区间为子字符串中，构成的“ICPC”子序列有多个。
 

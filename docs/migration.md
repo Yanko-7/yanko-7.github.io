@@ -19,6 +19,8 @@ Source: `Yanko-7/MyBlog`, commit `94ca4813e4b0881c3739e5e1d3ce7df1a69afc88`.
 
 `content-migration.json` records every source file, source date, destination slug, and draft/exclusion decision.
 
+A subsequent formatting pass repaired heading levels, lists, emphasis, formula delimiters and subscripts, and duplicated copy/paste notation. Five remote formula images were converted to inline math. All 146 code blocks retain their original contents.
+
 ## Images
 
 All 28 referenced images have been saved to `public/images/posts/`. Three OI Wiki PNG links had moved to SVG versions; their original and resolved URLs are recorded in `image-migration.json`. Original image attribution and external links in the text remain intact. No missing illustrations have been invented or replaced with unrelated images.

@@ -9,12 +9,9 @@ draft: false
 lang: zh-CN
 ---
 
-
-# Modern C++ 笔记
-
 > 记录不熟悉的地方
 
-### nullptr
+## nullptr
 
 nullptr应该替代Null。
 
@@ -28,9 +25,7 @@ nullptr应该替代Null。
 
 nullptr用于区分空指针和0.实际上其指向一个空对象.
 
-
-
-### constexpr (常量表达式)
+## constexpr (常量表达式)
 
 常量和常量表达式最明显的区别
 
@@ -42,13 +37,13 @@ char arr_1[2];//合法
 
 C++ 标准中数组的长度必须是一个常量表达式.len_1是const 常数，而不是一个常量表达式.
 
-==C++11 提供了 constexpr== 让用户显式的声明函数或对象构造函数在编译期会成为常量表达式.(即编译时即可确定的值)
+**C++11 提供了 constexpr** 让用户显式的声明函数或对象构造函数在编译期会成为常量表达式.(即编译时即可确定的值)
 
 故constexpr具有更强语意义.
 
-### C++17支持if和switch中定义变量(加分号)
+## C++17支持if和switch中定义变量(加分号)
 
-### 初始化列表
+## 初始化列表
 
 为了使对象能像数组,POD一样可以用{}初始化.
 
@@ -70,17 +65,17 @@ list的位置即可被{xxx}替代.
 
 用作一般函数也是可以的.
 
-### 结构化绑定
+## 结构化绑定
 
 是tuple支持多种类型多个元素的元组.
 
 但C++11的std::tuple非常难用.取元素需要用tie.
 
-==C++17可以使用auto直接获取==.
+**C++17可以使用auto直接获取**.
 
 `auto [x,y,z] = tuple;`
 
-### 类型推导
+## 类型推导
 
 register已经被弃用.
 
@@ -109,9 +104,9 @@ auto add3(T x, U y){
 }
 ```
 
-### decltype(auto)
+## decltype(auto)
 
-==C++14提供的复杂用法==.
+**C++14提供的复杂用法**.
 
 一般用于参数/转发函数的推导.
 
@@ -126,7 +121,7 @@ decltype(auto) look_up_a_string_2() {
 }
 ```
 
-### 控制流
+## 控制流
 
 c++17引入constexpr到if语句中,使得在编译时候就可以完成分支判断.
 
@@ -156,11 +151,11 @@ double print_type_info(const double& t) {
 }
 ```
 
-### 区间for迭代
+## 区间for迭代
 
 例如`for(xxx : xx)` `for(auto v : vec)`
 
-### 模板
+## 模板
 
 在C++11中,可以指定模板默认类型.这样在使用模板函数时候就不要指出类型了.
 
@@ -173,9 +168,7 @@ auto add(T x, U y) -> decltype(x+y) {
 auto ret = add(1,3);// == auto ret = add<int, int>(1,3); 
 ```
 
-
-
-### 递归模板函数
+## 递归模板函数
 
 感觉上非常麻烦,也不太懂.
 
@@ -193,11 +186,9 @@ printf1(args...);
 }
 ```
 
+## 变参模板展开
 
-
-### 变参模板展开
-
-==C++17==提供.可以直接在一个函数中写完.
+**C++17**提供.可以直接在一个函数中写完.
 
 ```cpp
 template<typename T0, typename... T>
@@ -207,13 +198,11 @@ void printf2(T0 t0, T... t) {
 }
 ```
 
-
-
 ## 面向对象
 
 ### 委托构造
 
-==C++11引入==.
+**C++11引入**.
 
 ### 继承构造
 
@@ -233,9 +222,9 @@ public:
 };
 ```
 
-### Lambda 表达式捕获
+## Lambda 表达式捕获
 
-==C++14==支持表达式捕获.
+**C++14**支持表达式捕获.
 
 ```cpp
 auto important = std::make_unique<int>(1);
@@ -244,9 +233,9 @@ auto add = [v1 = 1, v2 = std::move(important)](int x, int y) -> int {
 };
 ```
 
-### Lambda泛型
+## Lambda泛型
 
-==C++14==支持关键字泛型 不加尾置返回类型.
+**C++14**支持关键字泛型 不加尾置返回类型.
 
 ```cpp
 auto add = [](auto x, auto y) {
@@ -254,7 +243,7 @@ auto add = [](auto x, auto y) {
 };
 ```
 
-### 函数包装器
+## 函数包装器
 
 std::function(函数的容器)
 
@@ -266,7 +255,7 @@ std::function<int(int)> func = foo;
 std::cout << func(1);
 ```
 
-#### std::bind 和std::placeholder
+### std::bind 和std::placeholder
 
 std::bind用于绑定函数调用的参数. std::placeholder用于占位.通过这个函数，我们可以将部分调用参数提前绑定到函数身上成为一个新的对象，然后在参数齐全后，完成调用
 
@@ -276,7 +265,7 @@ auto bindfoo = std::bind(foo,1,std::placeholder::_2,3);
 bindfoo(2);
 ```
 
-### 引用
+## 引用
 
 左值:赋值符号左边的值.表达式赋值后依然存在的持久对象.
 
@@ -320,13 +309,13 @@ void foo() {
 
 是为了防止修改临时值.
 
-### 完美转发
+## 完美转发
 
 一个声明的右值引用其实是一个左值.进行参数转发的时候就比较麻烦.
 
 传统C++是不允许对引用再引用的.右值引用出现放宽了这一要求.
 
-#### 引用坍缩规则
+### 引用坍缩规则
 
 进行类型推导.
 
@@ -340,7 +329,7 @@ void foo() {
 
 `std::forward<T> xxx;`
 
-### 容器
+## 容器
 
 std::array的优势:
 
@@ -349,7 +338,7 @@ std::array的优势:
 
 std::forward_list 为单向链表
 
-### 为什么set用std::lower_bound会更慢
+## 为什么set用std::lower_bound会更慢
 
 传统C++中的有序容器有std::map/std::set.内部通过红黑树实现.迭代器为双向迭代器.虽然迭代器排布上元素是有序的,但与vector和array等不同的是,vector和array是随机访问迭代器.
 
@@ -357,7 +346,7 @@ std::forward_list 为单向链表
 
 故对于std::map/std::set等不支持随机访问迭代器的.使用std::lower_bound,由于其迭代器在排列上元素是有序的,故可以保证其答案的正确性,但其算法却使得其时间复杂度为O(logn+n).故应该使用其内部的lower_bound.
 
-### map容器
+## map容器
 
 unorder_map / map的初始化可以采用pair的形式.
 
@@ -369,12 +358,12 @@ std::unordered_map<int, std::string> u = {
 };
 ```
 
-### 元组
+## 元组
 
 核心三函数
 
-1. std::make_tuple: 构造元组 
-2. std::get: 获得元组某个位置的值 
+1. std::make_tuple: 构造元组
+2. std::get: 获得元组某个位置的值
 3. std::tie: 元组拆包
 
 ```cpp
@@ -389,13 +378,13 @@ C++17支持`auto [x, y, z] = x;`
 
 合并两个tuple,`std::tuple_cat(one,two);`
 
-### std::variant
+## std::variant
 
 上面的std::get等都是只支持编译期间,而不支持运行期(即动态类型)
 
-std::variant<>==（C++ 17 引入）==
+`std::variant<>` **（C++ 17 引入）**
 
-可以保存任意类型的==一个==值或者空值.
+可以保存任意类型的**一个**值或者空值.
 
 不可存放引用,数组,void.
 
@@ -411,11 +400,10 @@ std::cout<<v.index()<<std::endl;//1
 
 `holds_alternative<类型>(xxx)`检查variant当前是否持有某个特定类型.
 
-### RAII与引用计数
+## RAII与引用计数
 
-#### std::shared_ptr
+### std::shared_ptr
 
 get()可以获取原始指针,用这样不会让引用计数增加.
 
-注意事项:==用另一`shared_ptr`所占有的底层指针创建新的shared_ptr`导致未定义行为==
-
+注意事项:**用另一`shared_ptr`所占有的底层指针创建新的`shared_ptr`导致未定义行为**

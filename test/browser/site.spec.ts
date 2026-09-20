@@ -99,3 +99,48 @@ test("production search finds English and Chinese terms", async ({ page }) => {
   await page.locator(".pagefind-ui__result-link").first().click();
   await expect(page.locator("#article")).toBeVisible();
 });
+
+test("every published note has readable headings, formulas, and mobile layout", async ({
+  page,
+}) => {
+  test.setTimeout(90_000);
+  const { readFileSync } = await import("node:fs");
+  const { imported } = JSON.parse(
+    readFileSync("docs/content-migration.json", "utf8")
+  );
+  for (const post of imported.filter(
+    (post: { draft: boolean }) => !post.draft
+  )) {
+    await page.setViewportSize({ width: 360, height: 800 });
+    await page.goto(`/posts/${post.slug}/`);
+    await page.evaluate(() => document.fonts.ready);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator(".katex-error")).toHaveCount(0);
+    const headings = await page
+      .locator("#article :is(h2,h3,h4,h5,h6)")
+      .evaluateAll(elements =>
+        elements.map(element => Number(element.tagName.slice(1)))
+      );
+    expect(headings[0], post.slug).toBe(2);
+    for (let i = 1; i < headings.length; i++)
+      expect(headings[i], post.slug).toBeLessThanOrEqual(headings[i - 1] + 1);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth
+      ),
+      post.slug
+    ).toBe(true);
+    await expect(page.locator('#article img[src^="http"]')).toHaveCount(0);
+  }
+  await page.goto("/posts/modern-cpp-notes/");
+  await expect(page.locator("#article")).not.toContainText("==C++");
+  await expect(
+    page
+      .locator("#article strong")
+      .filter({ hasText: "C++11 提供了 constexpr" })
+  ).toHaveCount(1);
+  await page.goto("/posts/counting-and-differences/");
+  await expect(page.locator(".katex-display")).toHaveCount(1);
+  await page.locator(".katex-display").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "test-results/note-math-mobile.png" });
+});

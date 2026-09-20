@@ -9,7 +9,7 @@ draft: false
 lang: zh-CN
 ---
 
-### CF1725 C
+## CF1725 C
 
 > 给一个圆，以及圆上的n个点，以及点与点之间的距离。给m个颜色，要求给n个点涂色，并且有一个限制：颜色相同的三个颜色不能构成直角三角形
 
@@ -32,7 +32,10 @@ ${cnt\choose i}$为选i个直径颜色相同，${m\choose i}$为选出来的颜�
 如何保证剩下cnt-i个直径颜色不同？ ${m-i\choose2}2$为一个直径的方案，剩余的cnt-i个直径方案则为$(2{m-i\choose2})^{cnt-i}$。剩下的其余点颜色则可以从剩余的颜色里面随便选，则为$(m-i)^{n-2cnt}$
 
 则总公式为
-$$sum=\sum_i{cnt\choose i}i!{m\choose i}(2{m-i\choose2})^{cnt-i}(m-i)^{n-2cnt}$$
+
+$$
+sum=\sum_i{cnt\choose i}i!{m\choose i}(2{m-i\choose2})^{cnt-i}(m-i)^{n-2cnt}
+$$
 
 ```cpp
 #include<bits/stdc++.h>
@@ -111,11 +114,11 @@ int main(){
 
 乐，模数没改，wa13。
 
-### CF1725 L
+## CF1725 L
 
 好题
 
->  给你一个数组，然后每一次操作可以
+> 给你一个数组，然后每一次操作可以
 >
 > 1. Ai−1:=Ai−1+Ai
 > 2. Ai+1:=Ai+1+Ai

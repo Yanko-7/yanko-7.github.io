@@ -10,10 +10,7 @@ draft: false
 lang: zh-CN
 ---
 
-
-
-
-### A (01背包)https://www.luogu.com.cn/problem/P8742
+## [A (01背包)](https://www.luogu.com.cn/problem/P8742)
 
 砝码可放左边可放右边,故这个问题可以转变成可加可减,问有多少种大于等于0的重量.
 
@@ -28,9 +25,11 @@ $dp[i][j]$表示为考虑完前i个砝码,能否称出j重量.
 另外有两种决策,放左边/放右边,即+还是-.
 
 故我们可以得到状态转移方程
+
 $$
 dp[i][j]=dp[i-1][j]|dp[i-1][j-W[i]]|dp[i-1][j+W[i]]
 $$
+
 |运算表示其中存在即可以,当然具体的实现不能直接这么一条式子,我们需要处理重量小于0的情况.
 
 当然如果注意到$j-W[i]$如果为负数,其实只需要取abs即可.
@@ -68,7 +67,7 @@ int main(){
 
 ---
 
-### B(线性DP)https://codeforces.com/problemset/problem/455/A
+## [B(线性DP)](https://codeforces.com/problemset/problem/455/A)
 
 > 给出一个n元素序列.可以做操作.
 >
@@ -83,6 +82,7 @@ i元素删了,显然i-1元素就要被删,那么i-2是不受影响的.同理i+2�
 设$dp[i][op]$表示考虑完前i个数,并且第i个删/不删时的最大贡献. op为0表示不删,op为1表示删.
 
 故有
+
 $$
 dp[i][1]=max(dp[i-1][0]+i*book[i],dp[i-1][1]);
 $$
@@ -138,19 +138,22 @@ int main() {
 
 ---
 
-### C(期望DP)https://www.luogu.com.cn/problem/P8774
+## [C(期望DP)](https://www.luogu.com.cn/problem/P8774)
 
 > 有一只甲壳虫想要爬上一颗高度为 n 的树，它一开始位于树根, 高度为 0，当它尝试从高度 i-1 爬到高度为 i 的位置时有 $P_i$ 的概率会掉回树根, 求它从树根爬到树顶时, 经过的时间的期望值是多少。
 
 设$DP[i]$为位于i高度到树顶的时间期望.
+
 $$
 DP[i] = 1+DP[i+1]*(1-P_{i+1})+DP[0]*P_{i+1}
 $$
+
 按照题目就是这个方程的意思.
 
 一看是三个未知数.
 
 尝试从树顶向下推
+
 $$
 DP[n-1] = 1+DP[n]*(1-P_{n})+DP[0]*P_{n}==DP[n-1] = 1+DP[0]*P_{n}
 $$
@@ -160,9 +163,11 @@ DP[n-2] = 1+DP[n-1]*(1-P_{n-1})+DP[0]*P_{n-1}
 $$
 
 直到
+
 $$
 DP[0] = 1+DP[1]*(1-P_{1})+DP[0]*P_{1}
 $$
+
 公式为$DP[i]=1+DP[i+1]*(1-P_{i+1})+DP[0]*P_{i+1}\ \ (1)$
 
 观察可得
@@ -238,7 +243,7 @@ int main() {
 
 ---
 
-### D(DP入门)https://codeforces.com/problemset/problem/1285/B
+## [D(DP入门)](https://codeforces.com/problemset/problem/1285/B)
 
 > 要求是否能找到一个最大子段和大于总和,且不能是全选.
 
@@ -309,11 +314,11 @@ int main(){
 
 ---
 
-### E(完全背包)https://codeforces.com/problemset/problem/189/A
+## [E(完全背包)](https://codeforces.com/problemset/problem/189/A)
 
 > 四个物品,每个物品都可以无限拿,背包大小为n,问最多多少个物品.
 
-#####  [vic_cgh](https://vjudge.net/user/vic_cgh)'s solution for [[CodeForces-189A\]](https://vjudge.net/problem/CodeForces-189A) [[Problem E\]]
+参考代码：[vic_cgh](https://vjudge.net/user/vic_cgh) 的 [CodeForces 189A 题解](https://vjudge.net/problem/CodeForces-189A)。
 
 ```cpp
 # include <iostream>
@@ -353,7 +358,7 @@ int main()
 
 ---
 
-### F(计数DP)https://codeforces.com/contest/559/problem/C
+## [F(计数DP)](https://codeforces.com/contest/559/problem/C)
 
 非常经典的一道计数DP题.
 
@@ -443,7 +448,7 @@ int main(){
 
 ---
 
-### G(树上背包)https://codeforces.com/problemset/problem/815/C
+## [G(树上背包)](https://codeforces.com/problemset/problem/815/C)
 
 一般来说,我们可以用维度信息来表达能否达到某种条件.
 
@@ -532,7 +537,7 @@ signed main(){
 
 ---
 
-### H(线性DP)https://codeforces.com/problemset/problem/1005/D
+## [H(线性DP)](https://codeforces.com/problemset/problem/1005/D)
 
 > 切割字符串,使得能被3整除的段数最多.
 
@@ -593,20 +598,22 @@ int main(){
 
 ---
 
-### I(计数DP(不是 )https://atcoder.jp/contests/abc266/tasks/abc266_g?lang=en
+## [I（计数 DP？不是）](https://atcoder.jp/contests/abc266/tasks/abc266_g?lang=en)
 
 这不是DP啊,其实这是道数学题.
 
 > 求符合要求的字符串个数，对 998244353 取余。
 >
-> 满足要求的字符串 *s* 具备以下特性：
+> 满足要求的字符串 _s_ 具备以下特性：
 >
-> 1. *s* 由 `r`、`g`、`b` 构成。
-> 2. *s* 中有 *R* 个 `r`，*G* 个 `g`，*B* 个 `b`，*k* 个 `rg`。
+> 1. _s_ 由 `r`、`g`、`b` 构成。
+> 2. _s_ 中有 _R_ 个 `r`，_G_ 个 `g`，_B_ 个 `b`，_k_ 个 `rg`。
 
 钦定rg出现了至少k次的方案数设为$f(k)$.先考虑在k个rg中插入剩下的r,g,b.
 
+
 ![image-20230227150558238](/images/posts/37deb64f1567e9fe.png)
+
 
 与插板法不同的地方在于,头和尾都有插板.
 
@@ -617,9 +624,11 @@ int main(){
 假设有k个rg要被插入插板.
 
 那么相当于是满足下列等式的方案数.
+
 $$
 x_1+x_2+x_3+\dots+x_{k+1} = y \ \ (x_i>=0)
 $$
+
 这就是经典的非负整数和,插板法可得方案数为$C_{k+y}^{y}$.
 
 在题目中,设字符串长度为len.则为$C_{k+1+len-2\times k-1}^{k+1-1}=C_{len-k}^{k}$
@@ -629,17 +638,25 @@ $$
 即$\frac{(len-k)!}{b!(r-k)!(g-k)!}$
 
 得
+
 $$
 f(k) = C_{len-k}^k\frac{(len-2\times k)!}{b!(r-k)!(g-k)!}
 $$
+
 有二项式反演
+
 $$
-f(x) = \sum^{limit}\_{i=x}C_i^x g(i) ⇔ g(x)=\sum^{limit}\_{i=x}(-1)^{i-n}C_i^x f(i)
+f(x) = \sum^{limit}_{i=x}C_i^x g(i) ⇔ g(x)=\sum^{limit}_{i=x}(-1)^{i-n}C_i^x f(i)
 $$
+
 其中$g(x)$表示为恰好k次的方案数.
 
 可以得到
-$$g(x)=\sum^{limit}\_{i=x}(-1)^{i-n}C_i^x C_{len-i}^i\frac{(len-2\times i)!}{b!(r-i)!(g-i)!}$$
+
+$$
+g(x)=\sum^{limit}_{i=x}(-1)^{i-n}C_i^x C_{len-i}^i\frac{(len-2\times i)!}{b!(r-i)!(g-i)!}
+$$
+
 带入k即是答案.
 
 ```cpp
@@ -714,7 +731,7 @@ int main() {
 
 ---
 
-### J(DP)https://codeforces.com/problemset/problem/13/C
+## [J(DP)](https://codeforces.com/problemset/problem/13/C)
 
 看到范围是5000.可以考虑$n^2$的DP.
 
@@ -780,7 +797,7 @@ int main() {
 
 ---
 
-### K(计数DP)https://atcoder.jp/contests/abc262/tasks/abc262_d
+## [K(计数DP)](https://atcoder.jp/contests/abc262/tasks/abc262_d)
 
 注意到小数不符合,当且仅当总和是数量的倍数,且数量很少的条件.我们其实就可以知道了,这是一个余数DP.
 
@@ -844,16 +861,18 @@ int main() {
 
 ---
 
-### L(单调队列优化DP)http://poj.org/problem?id=1821
+## [L(单调队列优化DP)](http://poj.org/problem?id=1821)
 
 从数据范围上看,是个$n\times k$的DP.
 
 设出方程$DP[i][j]$表示前i个人,安排前j个任务下的最大贡献.
 
 根据题意可以得到转移方程
+
 $$
 DP[i][j]= max_{k}(DP[i-1][k]+(j-k+1)\times B[i])
 $$
+
 其中这条转移需要j在一定范围内才能进行,且k随着j的范围进行改变
 
 其中$0<=j-C[i]<=A[i],j-C[i]<=k<=j$
@@ -863,14 +882,16 @@ $$
 如果按照上面的方程直接转移,时间复杂度达到$O(n^2k)$没法通过这道题,考虑优化区间max.
 
 移项可得
+
 $$
-DP[i][j]=(j+1)\times B[i]+max\_{k}(DP[i-1][k]-k\times B[i])
+DP[i][j]=(j+1)\times B[i]+max_{k}(DP[i-1][k]-k\times B[i])
 $$
+
 当然我们可以在i层算每个j的时候加上B[j],然后树状数组/线段树等带log的做法查询区间的最值.但本题只给了一秒,所以需要O(1)的转移.
 
 每一层的i的区间长度是固定的,j的决策范围为连续一段的最大值,且区间长度固定,故采用单调队列优化即可.
 
-##### [#40536581]| [vic_cgh]'s solution for [POJ-1821\]
+参考代码：vic_cgh 的 POJ-1821 题解（提交 #40536581）。
 
 ```cpp
 # include <iostream>
@@ -934,7 +955,7 @@ int main()
 
 ---
 
-### M(线性DP)https://codeforces.com/contest/1296/problem/E2
+## [M(线性DP)](https://codeforces.com/contest/1296/problem/E2)
 
 从前往后考虑问题的话,设出$DP[i]$考虑前i个元素,第i个元素所需的最少颜色数.
 
