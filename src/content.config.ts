@@ -14,7 +14,6 @@ const posts = defineCollection({
       modDatetime: z.date().optional().nullable(),
       title: z.string(),
       lang: z.string().default("en"),
-      proseFont: z.enum(["sans", "serif"]).default("sans"),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),

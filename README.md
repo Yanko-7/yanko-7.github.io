@@ -43,7 +43,7 @@ draft: false
 ---
 ```
 
-Markdown supports fenced code and KaTeX math. File names become article URLs; use stable descriptive slugs. The UI and profile are in English; original Chinese article bodies retain their language. Google Sans Code is hosted locally (with its OFL license), matching the AstroPaper demo without remote font requests. Chinese article prose uses locally bundled Noto Sans SC at weight 400, split by Unicode range; headings and math retain their existing fonts. Code blocks and inline code use locally bundled JetBrains Mono (variable weight, normal style), with ligatures disabled. The font stylesheets are loaded on article pages. Its OFL license is included in `public/fonts/jetbrains-mono-OFL.txt`. Run the browser checks to record cold-load font sizes in `test-results/font-transfer.json`.
+Markdown supports fenced code and KaTeX math. File names become article URLs; use stable descriptive slugs. The UI and profile are in English; original Chinese article bodies retain their language. Google Sans Code is hosted locally (with its OFL license), matching the AstroPaper demo without remote font requests. Chinese article prose uses locally bundled Noto Serif SC at weight 400, split by Unicode range, with 17px text and 1.85 line height; headings and math retain their existing fonts. Code blocks and inline code use locally bundled JetBrains Mono (variable weight, normal style), with ligatures disabled. The font stylesheets are loaded on article pages. Its OFL license is included in `public/fonts/jetbrains-mono-OFL.txt`. Run the browser checks to record cold-load font sizes in `test-results/font-transfer.json`.
 
 ## Validation
 
@@ -67,5 +67,3 @@ The workflow builds on pull requests and deploys pushes to `main` or `master`. I
 Replaced al-folio/Jekyll with AstroPaper 6.1.0 (upstream commit recorded in `docs/migration.md`). Imported MyBlog articles dated 2022 or later; original drafts remain drafts. See [migration notes](docs/migration.md) and the JSON manifests for source dates and image status. No example AstroPaper articles are published.
 
 AstroPaper code is MIT-licensed; see [LICENSE](LICENSE). Personal writing and profile content belong to Yongkang Qi.
-
-The neural-network training note trials Noto Serif SC at 17px with 1.85 line height. Article frontmatter `proseFont: serif` enables this treatment; other articles retain the default sans-serif prose. Both Chinese fonts use weight 400 Unicode subsets and load font files only when used.

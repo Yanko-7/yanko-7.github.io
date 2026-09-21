@@ -7,7 +7,6 @@ tags:
 featured: true
 draft: false
 lang: zh-CN
-proseFont: serif
 ---
 
 ## 估计模型容量

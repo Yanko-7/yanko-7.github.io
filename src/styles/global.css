@@ -57,9 +57,6 @@
   overflow-wrap: anywhere;
 }
 #article:lang(zh-CN) {
-  font-family: "Google Sans Code", "Noto Sans SC", sans-serif;
-}
-#article:lang(zh-CN)[data-prose-font="serif"] {
   font-family: "Google Sans Code", "Noto Serif SC", serif;
   font-size: 17px;
   line-height: 1.85;

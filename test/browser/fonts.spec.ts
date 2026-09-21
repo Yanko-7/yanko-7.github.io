@@ -58,22 +58,18 @@ test("Article fonts use local subsets only when needed", async ({
         used.fonts.some(
           font =>
             font.isCustomFont &&
-            font.familyName.includes(
-              path === "/posts/neural-network-training-notes/"
-                ? "Noto Serif SC"
-                : "Noto Sans SC"
-            ) &&
+            font.familyName.includes("Noto Serif SC") &&
             font.glyphCount > 0
         )
       ).toBe(true);
-    }
-    if (path === "/posts/neural-network-training-notes/") {
       await expect(page.locator("#article")).toHaveCSS("font-size", "17px");
       await expect(page.locator("#article")).toHaveCSS(
         "line-height",
         "31.45px"
       );
       expect(fonts.some(font => font.url.includes("noto-sans-sc"))).toBe(false);
+    }
+    if (path === "/posts/neural-network-training-notes/") {
       await page.locator("#article").scrollIntoViewIfNeeded();
       await page.screenshot({ path: "test-results/serif-desktop.png" });
       await page.setViewportSize({ width: 390, height: 844 });
