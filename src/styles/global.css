@@ -59,6 +59,11 @@
 #article:lang(zh-CN) {
   font-family: "Google Sans Code", "Noto Sans SC", sans-serif;
 }
+#article:lang(zh-CN)[data-prose-font="serif"] {
+  font-family: "Google Sans Code", "Noto Serif SC", serif;
+  font-size: 17px;
+  line-height: 1.85;
+}
 #article :is(h2, h3, h4, h5, h6) {
   font-family: var(--font-app);
 }

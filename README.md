@@ -67,3 +67,5 @@ The workflow builds on pull requests and deploys pushes to `main` or `master`. I
 Replaced al-folio/Jekyll with AstroPaper 6.1.0 (upstream commit recorded in `docs/migration.md`). Imported MyBlog articles dated 2022 or later; original drafts remain drafts. See [migration notes](docs/migration.md) and the JSON manifests for source dates and image status. No example AstroPaper articles are published.
 
 AstroPaper code is MIT-licensed; see [LICENSE](LICENSE). Personal writing and profile content belong to Yongkang Qi.
+
+The neural-network training note trials Noto Serif SC at 17px with 1.85 line height. Article frontmatter `proseFont: serif` enables this treatment; other articles retain the default sans-serif prose. Both Chinese fonts use weight 400 Unicode subsets and load font files only when used.

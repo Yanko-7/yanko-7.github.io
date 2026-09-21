@@ -23,7 +23,7 @@ test("Article fonts use local subsets only when needed", async ({
         .getEntriesByType("resource")
         .filter(
           entry =>
-            (entry.name.includes("noto-sans-sc") ||
+            (/noto-(sans|serif)-sc/.test(entry.name) ||
               entry.name.includes("jetbrains-mono")) &&
             /\.woff2?(?:\?|$)/.test(entry.name)
         )
@@ -38,7 +38,7 @@ test("Article fonts use local subsets only when needed", async ({
       expect(fonts.length).toBeGreaterThan(0);
       for (const font of fonts) {
         expect(new URL(font.url).origin).toBe(new URL(baseURL!).origin);
-        if (font.url.includes("noto-sans-sc"))
+        if (/noto-(sans|serif)-sc/.test(font.url))
           expect(font.url).toContain("400-normal");
         expect(font.url).toMatch(/\.woff2$/);
         expect(font.bytes).toBeGreaterThan(0);
@@ -58,10 +58,27 @@ test("Article fonts use local subsets only when needed", async ({
         used.fonts.some(
           font =>
             font.isCustomFont &&
-            font.familyName.includes("Noto Sans SC") &&
+            font.familyName.includes(
+              path === "/posts/neural-network-training-notes/"
+                ? "Noto Serif SC"
+                : "Noto Sans SC"
+            ) &&
             font.glyphCount > 0
         )
       ).toBe(true);
+    }
+    if (path === "/posts/neural-network-training-notes/") {
+      await expect(page.locator("#article")).toHaveCSS("font-size", "17px");
+      await expect(page.locator("#article")).toHaveCSS(
+        "line-height",
+        "31.45px"
+      );
+      expect(fonts.some(font => font.url.includes("noto-sans-sc"))).toBe(false);
+      await page.locator("#article").scrollIntoViewIfNeeded();
+      await page.screenshot({ path: "test-results/serif-desktop.png" });
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.locator("#article").scrollIntoViewIfNeeded();
+      await page.screenshot({ path: "test-results/serif-mobile.png" });
     }
     if (path === "/posts/modern-cpp-notes/") {
       await expect(page.locator("#article pre code").first()).toHaveCSS(
@@ -92,10 +109,10 @@ test("Article fonts use local subsets only when needed", async ({
     }
     measurements.push({
       path,
-      chineseChunks: fonts.filter(font => font.url.includes("noto-sans-sc"))
+      chineseChunks: fonts.filter(font => /noto-(sans|serif)-sc/.test(font.url))
         .length,
       chineseBytes: fonts
-        .filter(font => font.url.includes("noto-sans-sc"))
+        .filter(font => /noto-(sans|serif)-sc/.test(font.url))
         .reduce((total, font) => total + font.bytes, 0),
       codeBytes: fonts
         .filter(font => font.url.includes("jetbrains-mono"))
